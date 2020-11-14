@@ -8,26 +8,26 @@ Building an [API](build_api/).
 
 Developing and using [classes](classes/).
 
-Building a [context manager](context_manager/README.md).
+Building a [context manager](context_manager/).
 
-Creating [decorators](decorator/README.md).
+Creating [decorators](decorator/).
 
-Interacting with the [environment](environment/README.md).
+Interacting with the [environment](environment/).
 
-[Functional](functions/README.md) styles.
+[Functional](functions/) styles.
 
-Building an [iterator](iterators/README.md).
+Building an [iterator](iterators/).
 
-Using [pytest](pytest/README.md).
+Using [pytest](pytest/).
 
-Using [mocks](mocks/README.md) for testing.
+Using [mocks](mocks/) for testing.
 
-Databases: [relational / sql](rdbms/README.md).
+Databases: [relational / sql](rdbms/).
 
-Databases: [nosql / mongodb](mongodb/README.md).
+Databases: [nosql / mongodb](mongodb/).
 
-Comparing [Object oriented and functional programming](oo_vs_fp/README.md).
+Comparing [Object oriented and functional programming](oo_vs_fp/).
 
-Using [pandas](pandas/README.md).
+Using [pandas](pandas/).
 
-Tracking and measuring [performance](performance/README.md).
+Tracking and measuring [performance](performance/).
