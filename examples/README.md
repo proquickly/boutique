@@ -4,7 +4,7 @@ Check back often; more coming. And don't forget, you can contribute by sending a
 
 [Asynchronous](async/README.md) programming.
 
-Building an [API](build_api/README.md).
+Building an [API](build_api/).
 
 Developing and using [classes](classes/README.md).
 
