@@ -2,11 +2,11 @@
 
 Check back often; more coming. And don't forget, you can contribute by sending a pull request.
 
-[Asynchronous](async/README.md) programming.
+[Asynchronous](async/) programming.
 
 Building an [API](build_api/).
 
-Developing and using [classes](classes/README.md).
+Developing and using [classes](classes/).
 
 Building a [context manager](context_manager/README.md).
 
