@@ -1,5 +1,7 @@
-# code-boutique
-code examples
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="andykmiles" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+# Python code boutique
+### Useful examples
+Feel free to send me a pull request if you'd like to add or amend your own useful examples. Any such work will be attributed to you!
+
+And if you find this useful please [buy me a coffe](https://www.buymeacoffee.com/andykmiles) to help me with my costs. Thank you!
 
 [Asynchronous Programming](async/README.md)
