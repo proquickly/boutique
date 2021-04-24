@@ -17,7 +17,6 @@ class AutoMPGData:
         self.data.append(autompg2)
         self.index = len(self.data)
 
-
     def __iter__(self):
         return self
 

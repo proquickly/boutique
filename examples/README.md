@@ -16,7 +16,7 @@ Interacting with the [environment](environment/).
 
 [Functional](functions/) styles.
 
-Building an [iterator](iterators/).
+Building an [iterator](iterator_iterable/).
 
 Using [pytest](pytest/).
 
