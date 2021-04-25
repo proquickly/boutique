@@ -1,3 +1,3 @@
 # Object orientation, functional programming
 
-For now, a simple example that compare the OO and FP approaches.
+For now, a simple example that compares the OO and FP approaches.
