@@ -1,3 +1,0 @@
-# Async programming
-
-More soon!
