@@ -9,3 +9,13 @@ https://deepsource.io
 https://codeac.io/
 
 https://snyk.io/
+
+https://github.com/EbookFoundation/free-programming-books
+
+https://github.com/ossu/computer-science
+
+https://github.com/public-apis/public-apis
+
+https://github.com/pawelborkar/awesome-repos
+
+https://github.com/mrdulin/resources
