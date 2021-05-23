@@ -130,3 +130,5 @@ dmypy.json
 .idea/
 /data/threads/
 .DS_Store
+venv/
+*.sublime-workspace
