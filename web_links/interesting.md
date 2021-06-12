@@ -19,3 +19,5 @@ https://github.com/public-apis/public-apis
 https://github.com/pawelborkar/awesome-repos
 
 https://github.com/mrdulin/resources
+
+https://www.theinsaneapp.com/2021/06/list-of-python-projects-with-source-code-and-tutorials.html
