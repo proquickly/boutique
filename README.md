@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/andykmiles/code_boutique/badge)](https://www.codefactor.io/repository/github/andykmiles/code_boutique)
+[![CircleCI](https://circleci.com/gh/andykmiles/code_boutique/tree/develop.svg?style=svg)](https://circleci.com/gh/andykmiles/code_boutique/tree/develop)
 
 # Python code boutique
 Python code [examples](src/), [tips and tricks](tips_and_tricks/) and essential Python [web links](web_links/)
