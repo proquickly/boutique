@@ -6,11 +6,12 @@ from flask import jsonify
 
 class Employees(Resource):
     def get(self):
-        conn = db_connect.connect()
-        query = conn.execute("select * from employees")
-        result = {"employees": [i[0] for i in query.cursor.fetchall()]}
-        conn.close()
-        return jsonify(result)
+        """conn = db_connect.connect()
+                                query = conn.execute("select * from employees")
+                                result = {"employees": [i[0] for i in query.cursor.fetchall()]}
+                                conn.close()"""
+        """return jsonify(result)"""
+        return "hello Victor"
 
 
 class Tracks(Resource):
