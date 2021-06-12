@@ -32,8 +32,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install
-          command: pip install -r requirements.txt  -r requirements.dev.txt
-          name: Run tests
-          # This assumes pytest is installed via the install-package step above
+          name: Install Run tests
+          command: pip install -r requirements.txt
+          command:  -r requirements.dev.txt
           command: pytest
