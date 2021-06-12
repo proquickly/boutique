@@ -33,6 +33,7 @@ jobs:
       - checkout
       - run:
           name: Install Run tests
-          command: pip install -r requirements.txt
-          command: pip install -r requirements.dev.txt
-          command: pytest
+          command: |
+            pip install -r requirements.txt
+            pip install -r requirements.dev.txt
+            pytest -vv
