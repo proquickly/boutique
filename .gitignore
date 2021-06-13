@@ -52,4 +52,5 @@ MANIFEST
 .venv*/
 .conda*/
 .venv/
+data/
 *.sublime-workspace
