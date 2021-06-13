@@ -39,7 +39,6 @@ def run_multi_threaded(filenames):
 
 @timer
 def run_single_threaded(filenames):
-
     [replace_in_file(filename, 'xx', '5678') for filename in filenames]
 
 
