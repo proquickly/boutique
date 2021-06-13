@@ -38,8 +38,8 @@ jobs:
             [[ -f requirements.txt ]] && pip install -r requirements.txt
             [[ -f requirements.dev.txt ]] && pip install -r requirements.dev.txt
             pytest -vv
-            pip install tox
-            tox -e docs
-            tox -e build
+            #pip install tox
+            #tox -e docs
+            #tox -e build
 
 
