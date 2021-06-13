@@ -1,8 +1,8 @@
-=====
-bethc
-=====
+=============
+code-boutique
+=============
 
-This is the documentation of **code_boutique**.
+This is the documentation of **code-boutique**.
 
 .. note::
 
