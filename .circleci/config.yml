@@ -37,8 +37,6 @@ jobs:
             pip install --upgrade pip
             [[ -f requirements.txt ]] && pip install -r requirements.txt
             [[ -f requirements.dev.txt ]] && pip install -r requirements.dev.txt
-            # pip install -r requirements.txt
-            # pip install -r requirements.dev.txt
             pytest -vv
             tox -e docs
 
