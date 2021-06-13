@@ -29,7 +29,6 @@ def setup():
 def run_multi_threaded(filenames):
 
     threads = [Thread(target=replace_in_file, args=(filename, 'yy', '1234')) \
-        for filename in filenames]
 
     for thread in threads:
         thread.start()
