@@ -15,7 +15,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: clients-code-boutique
+  IMAGE_NAME: andykmiles_code-boutique
 
 jobs:
   # Push image to GitHub Packages.
