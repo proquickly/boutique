@@ -1,5 +1,5 @@
 """
-    Dummy conftest.py for code_boutique.
+    Dummy conftest.py for boutique.
 
     If you don't know what this is for, just leave it empty.
     Read more about conftest.py under:

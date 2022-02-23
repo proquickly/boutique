@@ -1,13 +1,12 @@
 def set_comp():
-    return {(integer, integer ** 2)
-        for integer in range(1, 100001)
-        if integer ** 2 % 3 == 0
+    return {
+        (integer, integer ** 2) for integer in range(1, 100001) if integer ** 2 % 3 == 0
     }
 
 
 def min_max_set(a_set):
-    lowest = lowest_possible = float('inf') * -1
-    highest = highest_possible = float('inf')
+    lowest = lowest_possible = float("inf") * -1
+    highest = highest_possible = float("inf")
     for set_member in a_set:
         if lowest == lowest_possible or set_member < lowest:
             lowest = set_member
@@ -41,8 +40,8 @@ def set_stuff():
     scenario1 = set_comp()
     assert (3, 9) in scenario1
     assert (99999, 99999 ** 2) in scenario1
-    assert(10, 100) not in scenario1
-    assert(0, 0) not in scenario1
+    assert (10, 100) not in scenario1
+    assert (0, 0) not in scenario1
 
     scenario2 = min_max_set({5, 7, 1, 8, 5, 9, 2})
     assert scenario2 == (1, 9)
@@ -64,4 +63,5 @@ def set_stuff():
 
 
 if __name__ == "__main__":
-    set_stuff()
+    a = input("any key to start")
+    get_stuff()
