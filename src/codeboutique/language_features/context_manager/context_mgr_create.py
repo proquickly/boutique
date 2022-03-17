@@ -10,10 +10,6 @@ class ContextManager:
         print("exit method called")
 
 
-with ContextManager() as manager:
-    print("with statement block")
-
-
 class FileManager:
     def __init__(self, filename, mode):
         self.filename = filename
@@ -28,8 +24,15 @@ class FileManager:
         self.file.close()
 
 
-# loading a file
-with FileManager("test.txt", "w") as f:
-    f.write("Test")
+def main():
+    with ContextManager() as just_to_understand_flow:
+        print("with statement block")
 
-print(f.closed)
+    with FileManager("test.txt", "w") as f:
+        f.write("Test")
+
+    print(f.closed)
+
+
+if __name__ == "__main__":
+    main()
