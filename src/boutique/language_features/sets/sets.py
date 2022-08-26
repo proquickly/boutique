@@ -5,6 +5,7 @@ def set_comp():
 
 
 def min_max_set(a_set):
+    # {5, 7, 1, 8, 5, 9, 2}
     lowest = lowest_possible = float("inf") * -1
     highest = highest_possible = float("inf")
     for set_member in a_set:
@@ -58,10 +59,10 @@ def set_stuff():
     scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 11)
     assert scenario5 is True
 
-    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 99)
-    assert scenario5 is False
+    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 16)
+    assert scenario5 is True
 
 
 if __name__ == "__main__":
     a = input("any key to start")
-    get_stuff()
+    set_stuff()
