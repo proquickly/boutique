@@ -1,0 +1,1854 @@
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Run started:2023-06-18 18:18:15.371785
+
+Test results:
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b608_hardcoded_sql_expressions.html
+   Location: ./src/boutique/application_patterns/build_api/server.py:30:12
+29	        query = conn.execute(
+30	            "select * from employees where EmployeeId =%d " % int(employee_id)
+31	        )
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Requests call without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b113_request_without_timeout.html
+   Location: ./src/boutique/application_patterns/web_data/requests_json.py:8:7
+7	
+8	resp = requests.get(url=url) #, params=params)
+9	data = resp.json()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/good_practices/avoid_globals.py:6:0
+5	b = sim_global()['size']
+6	assert b == "small"
+7	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/good_practices/avoid_globals.py:14:0
+13	
+14	assert tryit(sim_global) == ("in try", "small")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/itertools/iter_demo.py:7:0
+6	from itertools import permutations
+7	assert list(permutations('ABCD', 2)) == [
+8	    ('A', 'B'), ('A', 'C'), ('A', 'D'),
+9	    ('B', 'A'), ('B', 'C'), ('B', 'D'),
+10	    ('C', 'A'), ('C', 'B'), ('C', 'D'),
+11	    ('D', 'A'), ('D', 'B'), ('D', 'C')]
+12	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/itertools/iter_demo.py:15:0
+14	
+15	assert list(islice('ABCDEFG', 2, 4)) == ['C', 'D']
+16	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/itertools/iter_demo.py:19:0
+18	
+19	assert list(product('ABCD', 'xy')) == [
+20	    ('A', 'x'), ('A', 'y'), ('B', 'x'), ('B', 'y'),
+21	    ('C', 'x'), ('C', 'y'), ('D', 'x'), ('D', 'y')]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/Archive/mock_and_patch.py:20:8
+19	        calculate_mock.return_value = "blah"
+20	        assert my_function() == "blah"
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/Archive/mock_date.py:19:0
+18	# Test Tuesday is a weekday
+19	assert is_weekday()
+20	# Mock .today() to return Saturday
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/Archive/mock_date.py:23:0
+22	# Test Saturday is not a weekday
+23	assert not is_weekday()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/Archive/mock_long.py:7:4
+6	    done = examples.mocks.sut.do_something()
+7	    assert examples.mocks.sut.do_something() is True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/mock_and_patch.py:20:8
+19	        calculate_mock.return_value = "blah"
+20	        assert my_function() == "blah"
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/mock_date.py:19:0
+18	# Test Tuesday is a weekday
+19	assert is_weekday()
+20	# Mock .today() to return Saturday
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/mock_date.py:23:0
+22	# Test Saturday is not a weekday
+23	assert not is_weekday()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/mock_long.py:7:4
+6	    done = examples.mocks.sut.do_something()
+7	    assert examples.mocks.sut.do_something() is True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/simple_date.py:30:0
+29	# Test Tuesday is a weekday
+30	assert is_weekday()
+31	# Mock .today() to return Saturday
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/mocks/simple_date.py:35:0
+34	# Test Saturday is not a weekday
+35	assert not is_weekday()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/oo/collaboration.py:13:0
+12	fred = Person("Fred Bloggs")
+13	assert isinstance(fred, Person)
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/oo/collaboration.py:17:0
+16	
+17	assert fred.first_parent.full_name == "Fred Bloggs Senior"
+18	assert fred.second_parent.full_name == "Freda Bloggs"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/oo/collaboration.py:18:0
+17	assert fred.first_parent.full_name == "Fred Bloggs Senior"
+18	assert fred.second_parent.full_name == "Freda Bloggs"
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Requests call without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b113_request_without_timeout.html
+   Location: ./src/boutique/dev_practices/performance/conc.py:64:12
+63	    for url in urls:
+64	        r = requests.get(url)
+65	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Requests call without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b113_request_without_timeout.html
+   Location: ./src/boutique/dev_practices/performance/concdemo.py:66:12
+65	    for url in urls:
+66	        r = requests.get(url)
+67	
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b608_hardcoded_sql_expressions.html
+   Location: ./src/boutique/dev_practices/pytest/dbtesting.py:24:9
+23	    data = [
+24	        [f'INSERT INTO tt VALUES ("{idnum}")' for idnum in range(10)],
+25	        [f'INSERT INTO t2 VALUES ("{idnum}")' for idnum in range(100)],
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b608_hardcoded_sql_expressions.html
+   Location: ./src/boutique/dev_practices/pytest/dbtesting.py:25:9
+24	        [f'INSERT INTO tt VALUES ("{idnum}")' for idnum in range(10)],
+25	        [f'INSERT INTO t2 VALUES ("{idnum}")' for idnum in range(100)],
+26	    ]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/dbtesting.py:53:4
+52	    results = [int(item[0]) for item in session.fetchall()]
+53	    assert results == list(range(10))
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/dbtesting.py:59:4
+58	    results = [int(item[0]) for item in session.fetchall()]
+59	    assert results == list(range(100))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/fixture.py:17:4
+16	def test_compare_with_aa(supplied_test_data):
+17	    assert supplied_test_data["aa"] != 35, "aa and zz failed"
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/fixture.py:21:4
+20	def test_compare_with_bb(supplied_test_data):
+21	    assert supplied_test_data["bb"] == 35, "bb and zz comparison failed"
+22	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/fixture.py:25:4
+24	def test_compare_with_cc(supplied_test_data):
+25	    assert supplied_test_data["cc"] != 35, "cc and zz comparison failed"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/test_extra.py:9:4
+8	    a = ["a", "b"]
+9	    assert a == a
+10	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/test_extra.py:13:4
+12	def test_something_else():
+13	    assert False
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/pytest/test_extra.py:47:4
+46	def test_user():
+47	    assert os.getenv("USER") == "xyz"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/unit_test/test_my_mod_pytest.py:8:4
+7	    actual = my_mod.my_func(test_val1, test_val2)
+8	    assert expected == actual
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/unit_test/unit_test_ex.py:21:4
+20	    b = 'some'
+21	    assert a == b
+22	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/unit_test/unit_test_ex.py:27:4
+26	    b = True
+27	    assert a is b
+28	# to here
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/dev_practices/validations/try_cerberus.py:3:0
+2	v = Validator({'name': {'type': 'string'}})
+3	assert v.validate({'name': 'andy miles'})
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/classes.py:6:0
+5	andy = Person()
+6	assert str(type(andy)) == "<class '__main__.Person'>"
+7	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/classes.py:15:0
+14	my_car = Vehicle("andy's")
+15	assert my_car.owner_name == "andy's"
+16	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/classes.py:31:0
+30	block_1 = Rectangle(12, 5)
+31	assert block_1.area() == 60
+32	assert block_1.perimeter() == 34
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/classes.py:32:0
+31	assert block_1.area() == 60
+32	assert block_1.perimeter() == 34
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/instance_v_type.py:13:4
+12	
+13	    assert isinstance(person, Person) is True
+14	    assert isinstance(professional, Professional) is True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/instance_v_type.py:14:4
+13	    assert isinstance(person, Person) is True
+14	    assert isinstance(professional, Professional) is True
+15	    assert isinstance(professional, Person) is True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/instance_v_type.py:15:4
+14	    assert isinstance(professional, Professional) is True
+15	    assert isinstance(professional, Person) is True
+16	    assert str(type(person)) == "<class '__main__.Person'>"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/instance_v_type.py:16:4
+15	    assert isinstance(professional, Person) is True
+16	    assert str(type(person)) == "<class '__main__.Person'>"
+17	    assert str(type(professional)) == "<class '__main__.Professional'>"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/instance_v_type.py:17:4
+16	    assert str(type(person)) == "<class '__main__.Person'>"
+17	    assert str(type(professional)) == "<class '__main__.Professional'>"
+18	    assert str(type(professional)) != "<class '__main__.Person'>"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/classes/instance_v_type.py:18:4
+17	    assert str(type(professional)) == "<class '__main__.Professional'>"
+18	    assert str(type(professional)) != "<class '__main__.Person'>"
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_chainmap.py:9:0
+8	cm = ChainMap(person0, person1)
+9	assert cm['name'] == 'andy'
+10	assert cm['another_age'] == 22
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_chainmap.py:10:0
+9	assert cm['name'] == 'andy'
+10	assert cm['another_age'] == 22
+11	cm.maps.append(person2)  # can mutate
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_chainmap.py:12:0
+11	cm.maps.append(person2)  # can mutate
+12	assert cm['color'] == 'blue'
+13	cm = cm.new_child(person3)  # must reassign; can't mutate with new_child
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_chainmap.py:14:0
+13	cm = cm.new_child(person3)  # must reassign; can't mutate with new_child
+14	assert cm['name'] == 'bill'
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/blacklists/blacklist_calls.html#b311-random
+   Location: ./src/boutique/language_features/collections/demo_counters.py:6:20
+5	
+6	randoms_to_count = [random.randint(0, 10) for _ in range(0, 100)]
+7	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_counters.py:10:0
+9	
+10	assert count_nums == Counter({7: 13, 6: 12, 10: 11, 0: 11,
+11	                              8: 10, 3: 9, 9: 8, 1: 8,
+12	                              4: 7, 5: 6, 2: 5})
+13	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_counters.py:18:0
+17	n1.subtract(n2)
+18	assert n1 == Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_counters.py:20:0
+19	
+20	assert sum({n for _, n in n1.items()}) == -6
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:8:0
+7	
+8	assert isinstance(ints_deq, deque)
+9	assert ints_deq == deque([-999, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:9:0
+8	assert isinstance(ints_deq, deque)
+9	assert ints_deq == deque([-999, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999])
+10	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:12:0
+11	ints_deq.extend([0, 2, 4, 3, 2, 6])
+12	assert ints_deq.count(2) == 3
+13	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:15:0
+14	ints_deq.extendleft([2,5,3,1])
+15	assert ints_deq.count(2) == 4
+16	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:17:0
+16	
+17	assert ints_deq == deque([
+18	    1, 3, 5, 2, -999, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999, 0, 2, 4, 3, 2, 6])
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:21:0
+20	removed = ints_deq.popleft()
+21	assert removed == 1
+22	assert ints_deq == deque([
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:22:0
+21	assert removed == 1
+22	assert ints_deq == deque([
+23	    3, 5, 2, -999, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 999, 0, 2, 4, 3, 2, 6])
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_deque.py:26:0
+25	ints_deq.rotate(10)
+26	assert ints_deq == deque([
+27	    7, 8, 9, 999, 0, 2, 4, 3, 2, 6, 3, 5, 2, -999, 0, 1, 2, 3, 4, 5, 6])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:8:4
+7	except KeyError as e:
+8	    assert isinstance(e, KeyError)
+9	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:14:0
+13	a = ints_d[1]
+14	assert a == 0
+15	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:20:0
+19	ints_o[1] = 'b'
+20	assert ints_o == {0: 'a', 1: 'b'}
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:23:0
+22	ints_o.move_to_end(0, True)
+23	assert ints_o == {1: 'b', 0: 'a'}
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:26:0
+25	ints_o[2] = 'c'
+26	assert ints_o == {1: 'b', 0: 'a', 2: 'c'}
+27	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:29:0
+28	ints_o.move_to_end(2, False)
+29	assert ints_o == {2: 'c', 1: 'b', 0: 'a'}
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_dicts.py:32:0
+31	chars = OrderedDict.fromkeys("abcdef")
+32	assert chars == OrderedDict([
+33	    ('a', None), ('b', None), ('c', None), ('d', None), ('e', None), ('f', None)
+34	])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:6:0
+5	
+6	assert person.name == 'andy'
+7	assert person.age == 42
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:7:0
+6	assert person.name == 'andy'
+7	assert person.age == 42
+8	assert person.favorite_color == 'green'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:8:0
+7	assert person.age == 42
+8	assert person.favorite_color == 'green'
+9	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:10:0
+9	
+10	assert person._fields == ('name', 'age', 'favorite_color')
+11	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:12:0
+11	
+12	assert person._replace(name='fred', age=55)  # !!! note age
+13	assert person.name == 'andy'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:13:0
+12	assert person._replace(name='fred', age=55)  # !!! note age
+13	assert person.name == 'andy'
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:16:0
+15	person_new = person._replace(name='fred')
+16	assert person_new.name == 'fred'
+17	assert person is not person_new
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:17:0
+16	assert person_new.name == 'fred'
+17	assert person is not person_new
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:19:0
+18	
+19	assert person == Person(name='andy', age=42, favorite_color='green')
+20	assert person_new == Person(name='fred', age=42, favorite_color='green')  # !!!
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:20:0
+19	assert person == Person(name='andy', age=42, favorite_color='green')
+20	assert person_new == Person(name='fred', age=42, favorite_color='green')  # !!!
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:26:0
+25	nt_from_dict = Person._make(person_dict)
+26	assert nt_from_dict == Person(name='name', age='age',
+27	                              favorite_color='favorite_color')
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:30:0
+29	nt_from_list = Person(**person_dict)
+30	assert nt_from_list == Person(name='andy', age=40, favorite_color='blue')
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:32:0
+31	
+32	assert person == Person(name='andy', age=42, favorite_color='green')
+33	person = person._replace(name='fred', age=55)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/collections/demo_namedtuples.py:34:0
+33	person = person._replace(name='fred', age=55)
+34	assert person == Person(name='fred', age=55, favorite_color='green')  # !!!
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/comprehensions/comps.py:2:0
+1	names = [name.capitalize() for name in ("andy", "sue", "pete")]
+2	assert names == ["Andy", "Sue", "Pete"]
+3	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/comprehensions/comps.py:5:0
+4	some_names = [name for name in names if name[0] != "S"]
+5	assert some_names == ["Andy", "Pete"]
+6	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/comprehensions/comps.py:8:0
+7	some_names.append(sum([num for num in range(0, 20, 4)]))
+8	assert some_names == ["Andy", "Pete", 40]
+9	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/comprehensions/comps.py:13:0
+12	
+13	assert names_with_id == {1: "Andy", 2: "Sue", 3: "Pete"}
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/comprehensions/comps.py:16:0
+15	numbers = list(range(10)) + list(range(20))
+16	assert numbers == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+17	    10, 11, 12, 13, 14, 15, 16, 17, 18, 19, ]
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/comprehensions/comps.py:20:0
+19	two_multiples = {number for number in numbers if number % 2 == 0}
+20	assert two_multiples == {0, 2, 4, 6, 8, 10, 12, 14, 16, 18}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/case.py:8:8
+7	    if choice == 1:
+8	        assert messages[choice] == "hello"
+9	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/case.py:10:8
+9	    else:
+10	        assert messages[choice] == "goodbye"
+11	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/case.py:29:0
+28	
+29	assert todo[2](3, 4) == -1
+30	assert todo[1](3, 4) == 7
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/case.py:30:0
+29	assert todo[2](3, 4) == -1
+30	assert todo[1](3, 4) == 7
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict.py:9:0
+8	
+9	assert dict_to_list == [("Name", "Andy"), ("Job", "Tutor")]
+10	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict.py:20:0
+19	
+20	assert dict_to_list == [("Andy", "Name"), ("Tutor", "Job")]
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict.py:29:0
+28	
+29	assert people[1]["Name"] == "Fred"
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict.py:40:0
+39	
+40	assert my_dict == {"Name": "Andy", "Job": "Analyst", "Preferred_name": "Andy"}
+41	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict.py:47:0
+46	
+47	assert my_new_dict == {"Andy": "Preferred_name", "Analyst": "Job"}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:30:0
+29	
+30	assert mydict['Credit'] == 42.09
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:58:0
+57	
+58	assert dict_to_list == [("Name", "Andy"), ("Job", "Tutor")]
+59	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:67:0
+66	
+67	assert people[1]["Name"] == "Fred"
+68	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:78:0
+77	
+78	assert my_dict == {"Name": "Andy", "Job": "Analyst", "Preferred_name": "Andy"}
+79	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:85:0
+84	
+85	assert my_new_dict == {"Analyst": "Job", "Andy": "Preferred_name"}
+86	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:105:0
+104	
+105	assert better_people[2] == {"Name": "Fred", "Job": "Analyst"}
+106	assert better_people[2]["Name"] == "Fred"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dict_demo.py:106:0
+105	assert better_people[2] == {"Name": "Fred", "Job": "Analyst"}
+106	assert better_people[2]["Name"] == "Fred"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dictsort.py:8:0
+7	person = people.get(1, None)
+8	assert person == 'fred'
+9	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/dictionary/dictsort.py:11:0
+10	person = people.get(8, None)
+11	assert person is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/exceptions/exceps_demo.py:9:0
+8	
+9	assert math_divide(5, 2) == 2.5
+10	#math_divide(4, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/exceptions/exceps_demo.py:34:4
+33	finally:
+34	    assert f.readlines() == ["header"]
+35	    f.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/functions/func_parm.py:13:0
+12	
+13	assert proc_nums(adder, 3, 4) == 7
+14	assert proc_nums(suber, 100, 98) == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/functions/func_parm.py:14:0
+13	assert proc_nums(adder, 3, 4) == 7
+14	assert proc_nums(suber, 100, 98) == 2
+15	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/functions/lambda_ex.py:5:0
+4	
+5	assert (lambda x: x + 1)(2) == increment_by_one(2)
+6	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/functions/lambda_ex.py:7:0
+6	
+7	assert (lambda x, y: x + y)(10, 20) == 30
+8	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/functions/lambda_ex.py:9:0
+8	
+9	assert (lambda *args: sum(args))(1, 2, 9) == 12
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/importing/show_import.py:5:0
+4	
+5	assert imported.doit() == 999
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/importing/test_imported.py:5:4
+4	def test_doit():
+5	    assert imported.doit() == 999
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/class_and_generator.py:23:0
+22	result1 = list(islice(series1, 10, 14)).copy()
+23	assert result1 == [89, 144, 233, 377]
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/class_and_generator.py:35:0
+34	result2 = list(islice(series2, 10, 14)).copy()
+35	assert result2 == result1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/concepts.py:8:0
+7	
+8	assert isinstance(people, list)
+9	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/concepts.py:11:0
+10	name = iter(people)
+11	assert str(type(name)) == "<class 'list_iterator'>"
+12	assert next(name) == people[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/concepts.py:12:0
+11	assert str(type(name)) == "<class 'list_iterator'>"
+12	assert next(name) == people[0]
+13	assert next(name) == people[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/concepts.py:13:0
+12	assert next(name) == people[0]
+13	assert next(name) == people[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/cool_itertools.py:6:0
+5	counter = count(start=6)
+6	assert next(counter) == 6
+7	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/cool_itertools.py:15:0
+14	
+15	assert explain_cycle == ['andy', 'sue', 'fred', 'pete', 'andy']
+16	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/iterator_iterable/cool_itertools.py:17:0
+16	
+17	assert islice(people, 1, 3) == ['sue', 'fred']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:15:0
+14	
+15	assert squared == [1, 4, 9, 16, 25]
+16	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:30:0
+29	
+30	assert squared == [1, 4, 9, 16, 25]
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:38:0
+37	
+38	assert squared == [1, 4, 9, 16, 25]
+39	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:62:0
+61	
+62	assert output == [[0, 0], [1, 1], [4, 8], [9, 27], [16, 64]]
+63	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:70:0
+69	
+70	assert pow(2, 10) == 1024
+71	assert pow(3, 11) == 177147
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:71:0
+70	assert pow(2, 10) == 1024
+71	assert pow(3, 11) == 177147
+72	assert pow(4, 12) == 16777216
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:72:0
+71	assert pow(3, 11) == 177147
+72	assert pow(4, 12) == 16777216
+73	assert list(map(pow, [2, 3, 4], [10, 11, 12])) == [1024, 177147, 16777216]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:73:0
+72	assert pow(4, 12) == 16777216
+73	assert list(map(pow, [2, 3, 4], [10, 11, 12])) == [1024, 177147, 16777216]
+74	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:82:0
+81	
+82	assert list(map(add, x, y)) == [5, 7, 9]
+83	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:103:0
+102	
+103	assert func(x) == x
+104	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:105:0
+104	
+105	assert lambda x: x == x
+106	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:114:0
+113	
+114	assert new_tuples == [(1, 1), (2, 4), (3, 9)]
+115	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:118:0
+117	
+118	assert list(zip(m, n)) == [(1, 1), (2, 4), (3, 9)]
+119	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:125:0
+124	
+125	assert list(zip(m, n)) == [(1, 1), (2, 4), (3, 9)]  # !!!!
+126	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:131:0
+130	
+131	assert list(zip_longest(m, n)) == [(1, 1), (2, 4), (3, 9), (None, 10)]
+132	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:147:0
+146	
+147	assert result == 24
+148	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:153:0
+152	
+153	assert result == 0.041666666666666664
+154	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:160:0
+159	
+160	assert reduce((lambda x, y: x * y), [1, 2, 3, 4]) == 24
+161	assert reduce((lambda x, y: x / y), [1, 2, 3, 4]) == 0.041666666666666664
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:161:0
+160	assert reduce((lambda x, y: x * y), [1, 2, 3, 4]) == 24
+161	assert reduce((lambda x, y: x / y), [1, 2, 3, 4]) == 0.041666666666666664
+162	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:167:0
+166	l = ["I ", "passed ", "the ", "Python ", "certificate"]
+167	assert reduce((lambda x, y: x + y), l) == "I passed the Python certificate"
+168	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:169:0
+168	
+169	assert list(range(-5, 5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+170	assert list(filter((lambda x: x < 0), range(-5, 5))) == [
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:170:0
+169	assert list(range(-5, 5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+170	assert list(filter((lambda x: x < 0), range(-5, 5))) == [
+171	    -5,
+172	    -4,
+173	    -3,
+174	    -2,
+175	    -1,
+176	]
+177	# Items in the sequence or iterable for which the function returns a true,
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:184:0
+183	b = [2, 3, 5, 6, 7, 8]
+184	assert list(filter(lambda x: x in a, b)) == [2, 3, 5, 7]
+185	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/map_red_filt/map_demo.py:191:0
+190	b = [2, 3, 5, 6, 7, 8]
+191	assert [x for x in a if x in b] == [2, 3, 5, 7]
+192	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/regex_ex/demo.py:7:8
+6	    if assert_value:
+7	        assert re.search(reg_exp, searching)
+8	        print(exp_num, reg_exp_pr, re.search(reg_exp, searching))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/regex_ex/demo.py:10:8
+9	    else:
+10	        assert not re.search(reg_exp, searching)
+11	        print(exp_num, reg_exp_pr, "no match")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/regex_ex/demo.py:15:0
+14	s = "ab"
+15	assert "a" in s
+16	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/regex_ex/demo.py:19:0
+18	
+19	assert "ui" in cs
+20	assert cs.find("nufb") == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/regex_ex/demo.py:20:0
+19	assert "ui" in cs
+20	assert cs.find("nufb") == 10
+21	assert "ZTk" in cs
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/regex_ex/demo.py:21:0
+20	assert cs.find("nufb") == 10
+21	assert "ZTk" in cs
+22	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:39:4
+38	    unique = set(scenario0)
+39	    assert sorted(list(unique)) == [1, 3, 4, 5, 6]
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:42:4
+41	    scenario1 = set_comp()
+42	    assert (3, 9) in scenario1
+43	    assert (99999, 99999 ** 2) in scenario1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:43:4
+42	    assert (3, 9) in scenario1
+43	    assert (99999, 99999 ** 2) in scenario1
+44	    assert(10, 100) not in scenario1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:44:4
+43	    assert (99999, 99999 ** 2) in scenario1
+44	    assert(10, 100) not in scenario1
+45	    assert(0, 0) not in scenario1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:45:4
+44	    assert(10, 100) not in scenario1
+45	    assert(0, 0) not in scenario1
+46	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:48:4
+47	    scenario2 = min_max_set({5, 7, 1, 8, 5, 9, 2})
+48	    assert scenario2 == (1, 9)
+49	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:51:4
+50	    scenario3 = unique_elems([3, 4, 5, 2, 5, 1])
+51	    assert scenario3 is False
+52	    scenario3 = unique_elems([3, 4, 5, 2, 7, 1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:53:4
+52	    scenario3 = unique_elems([3, 4, 5, 2, 7, 1])
+53	    assert scenario3 is True
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:57:8
+56	    for n in {1, 4, 5, 8, 99}:
+57	        assert n in scenario4
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:60:4
+59	    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 11)
+60	    assert scenario5 is True
+61	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/set_demo.py:63:4
+62	    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 99)
+63	    assert scenario5 is False
+64	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:39:4
+38	    unique = set(scenario0)
+39	    assert sorted(list(unique)) == [1, 3, 4, 5, 6]
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:42:4
+41	    scenario1 = set_comp()
+42	    assert (3, 9) in scenario1
+43	    assert (99999, 99999 ** 2) in scenario1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:43:4
+42	    assert (3, 9) in scenario1
+43	    assert (99999, 99999 ** 2) in scenario1
+44	    assert (10, 100) not in scenario1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:44:4
+43	    assert (99999, 99999 ** 2) in scenario1
+44	    assert (10, 100) not in scenario1
+45	    assert (0, 0) not in scenario1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:45:4
+44	    assert (10, 100) not in scenario1
+45	    assert (0, 0) not in scenario1
+46	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:48:4
+47	    scenario2 = min_max_set({5, 7, 1, 8, 5, 9, 2})
+48	    assert scenario2 == (1, 9)
+49	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:51:4
+50	    scenario3 = unique_elems([3, 4, 5, 2, 5, 1])
+51	    assert scenario3 is False
+52	    scenario3 = unique_elems([3, 4, 5, 2, 7, 1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:53:4
+52	    scenario3 = unique_elems([3, 4, 5, 2, 7, 1])
+53	    assert scenario3 is True
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:57:8
+56	    for n in {1, 4, 5, 8, 99}:
+57	        assert n in scenario4
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:60:4
+59	    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 11)
+60	    assert scenario5 is True
+61	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./src/boutique/language_features/sets/sets.py:63:4
+62	    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 16)
+63	    assert scenario5 is True
+64	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/blacklists/blacklist_calls.html#b311-random
+   Location: ./src/boutique/language_features/threads/qs.py:7:5
+6	
+7	b = [randrange(20) for _ in range(30)]
+8	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/blacklists/blacklist_calls.html#b311-random
+   Location: ./src/boutique/language_features/threads/qs.py:23:19
+22	            print("I do my work here...")
+23	            work = randrange(20)
+24	            time.sleep(work)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./tests/test_it.py:9:4
+8	    actual = 9
+9	    assert expected == actual
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./tests/test_skeleton.py:12:4
+11	    """API Tests"""
+12	    assert fib(1) == 1
+13	    assert fib(2) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./tests/test_skeleton.py:13:4
+12	    assert fib(1) == 1
+13	    assert fib(2) == 1
+14	    assert fib(7) == 13
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./tests/test_skeleton.py:14:4
+13	    assert fib(2) == 1
+14	    assert fib(7) == 13
+15	    with pytest.raises(AssertionError):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b101_assert_used.html
+   Location: ./tests/test_skeleton.py:25:4
+24	    captured = capsys.readouterr()
+25	    assert "The 7-th Fibonacci number is 13" in captured.out
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2736
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 178
+		Medium: 6
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 5
+		Medium: 1
+		High: 178
+Files skipped (3):
+	./src/boutique/dev_practices/mocks/Archive/mock_mongo.py (syntax error while parsing AST from file)
+	./src/boutique/dev_practices/mocks/mock_mongo.py (syntax error while parsing AST from file)
+	./src/boutique/language_features/threads/threads.py (syntax error while parsing AST from file)
