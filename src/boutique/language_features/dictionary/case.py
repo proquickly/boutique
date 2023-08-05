@@ -3,7 +3,7 @@ messages = {
     2: "goodbye",
 }
 
-for choice in [1 ,2]:
+for choice in [1, 2]:
     if choice == 1:
         assert messages[choice] == "hello"
     else:

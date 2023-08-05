@@ -15,29 +15,32 @@ from multiprocessing import Pool
 from multiprocessing import Process
 import os
 
-def f1(x): # for Pool
-    return x*x
+
+def f1(x):  # for Pool
+    return x * x
+
 
 def info(title):
     print(title)
-    print('module name:', __name__)
-    print('parent process:', os.getppid())
-    print('process id:', os.getpid())
+    print("module name:", __name__)
+    print("parent process:", os.getppid())
+    print("process id:", os.getpid())
 
-def f2(name): # for Process
-    info('function f2')
-    print('hello', name)
 
-if __name__ == '__main__':
+def f2(name):  # for Process
+    info("function f2")
+    print("hello", name)
 
+
+if __name__ == "__main__":
     print("part 1 Pool")
     with Pool(5) as p1:
         print(p1.map(f1, [10, 11, 12]))
     print()
 
     print("part 2 Process")
-    info('main line')
-    p2 = Process(target=f2, args=('bob',))
+    info("main line")
+    p2 = Process(target=f2, args=("bob",))
     p2.start()
     p2.join()
 

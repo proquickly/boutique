@@ -13,7 +13,7 @@ def calculate_amount(premium, interest):
     return premium * interest
 
 
-def mai():
+def main():
     amount = calculate_amount(120, 1.10)
     print(f"\nAmount is {amount}")
 

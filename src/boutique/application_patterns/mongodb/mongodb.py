@@ -10,7 +10,7 @@ pip install pymongo
 """
 from pymongo import MongoClient
 
-class MongoDBConnection(object):
+class MongoDBConnection:
     """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
         """

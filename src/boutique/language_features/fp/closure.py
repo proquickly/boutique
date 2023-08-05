@@ -9,10 +9,9 @@ logging.basicConfig(filename="example.log", level=logging.INFO)
 def logger(func):
     """we have a closure in Python when a nested function
     references a value in its enclosing scope"""
+
     def log_func(*args):
-        logging.info(
-            'Running "{}" with arguments {}'.format(func.__name__, args)
-        )
+        logging.info('Running "{}" with arguments {}'.format(func.__name__, args))
         print(func(*args))
 
     # Necessary for closure to work (returning WITHOUT parenthesis)

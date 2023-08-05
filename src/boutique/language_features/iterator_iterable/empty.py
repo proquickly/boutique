@@ -1,4 +1,3 @@
-
 import more_itertools
 
 favorite_numbers = []
@@ -13,3 +12,4 @@ if size_check:
 else:
     print("empty")
     # Iterator is empty.
+P

@@ -12,4 +12,3 @@ def suber(lhs, rhs):
 
 assert proc_nums(adder, 3, 4) == 7
 assert proc_nums(suber, 100, 98) == 2
-
