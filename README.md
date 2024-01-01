@@ -1,5 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/andykmiles/code_boutique/badge)](https://www.codefactor.io/repository/github/andykmiles/code_boutique)
-[![CircleCI](https://circleci.com/gh/andykmiles/code_boutique/tree/develop.svg?style=svg)](https://circleci.com/gh/andykmiles/code_boutique/tree/develop)
+[![CodeFactor](https://www.codefactor.io/repository/github/proquickly/boutique/badge)](https://www.codefactor.io/repository/github/proquickly/boutique)
 
 # Python code boutique
 Python code [examples](src/), [tips and tricks](tips/) and essential Python [web links](web/)
