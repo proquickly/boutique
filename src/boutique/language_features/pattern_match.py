@@ -15,3 +15,4 @@ def parse_json_example(event):
         case {"issue": {"pull_request": _}}:
             # The comment is on a pull request. Process it.
             return do_something(event)
+        
