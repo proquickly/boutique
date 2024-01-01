@@ -20,3 +20,7 @@ numpy
 matplotlib
 nltk
 pdfplumber
+flask
+flask-restful
+sqlalchemy
+pymongo

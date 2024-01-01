@@ -1,13 +1,15 @@
 from flask import Flask
 from flask_restful import Resource, Api
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from flask import jsonify
+
+db_connect = create_engine("sqlite:///chinook.db")
 
 
 class Employees(Resource):
     def get(self):
         conn = db_connect.connect()
-        query = conn.execute("select * from employees")
+        query = conn.execute(text("select * from employees"))
         result = {"employees": [i[0] for i in query.cursor.fetchall()]}
         conn.close()
         return jsonify(result)
@@ -16,7 +18,7 @@ class Employees(Resource):
 class Tracks(Resource):
     def get(self):
         conn = db_connect.connect()
-        sql = "select trackid, name, composer, unitprice from tracks;"
+        sql = text("select trackid, name, composer, unitprice from tracks;")
         query = conn.execute(sql)
         result = {"data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
         conn.close()
@@ -27,7 +29,7 @@ class Employees_Name(Resource):
     def get(self, employee_id: int):
         conn = db_connect.connect()
         query = conn.execute(
-            "select * from employees where EmployeeId =%d " % int(employee_id)
+            text("select * from employees where EmployeeId =%d " % int(employee_id))
         )
         result = {"data": [dict(zip(tuple(query.keys()), i))
                            for i in query.cursor]}
@@ -36,7 +38,6 @@ class Employees_Name(Resource):
 
 
 def main():
-    db_connect = create_engine("sqlite:///chinook.db")
 
     app = Flask(__name__)
 
@@ -45,7 +46,7 @@ def main():
     api.add_resource(Tracks, "/tracks")  # Route_2
     api.add_resource(Employees_Name, "/employees/<employee_id>")  # Route_3
 
-    app.run(port="5002")
+    app.run(port="5000")
 
     db_connect.dispose()
 
