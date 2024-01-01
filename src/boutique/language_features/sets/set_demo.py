@@ -22,17 +22,6 @@ def unique_elems(values):
     return False
 
 
-def common_elems(a, b):
-    return frozenset(a ^ b)
-
-
-def adds_to_k(a, k):
-    for num in a:
-        if k - num in a:
-            return True
-    return False
-
-
 def set_stuff():
     scenario0 = [1, 5, 4, 3, 1, 6]
     unique = set(scenario0)
@@ -51,16 +40,6 @@ def set_stuff():
     assert scenario3 is False
     scenario3 = unique_elems([3, 4, 5, 2, 7, 1])
     assert scenario3 is True
-
-    scenario4 = common_elems({5, 7, 2, 8, 4}, {99, 2, 7, 1})
-    for n in {1, 4, 5, 8, 99}:
-        assert n in scenario4
-
-    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 11)
-    assert scenario5 is True
-
-    scenario5 = adds_to_k({4, 7, 2, 11, 32, 5}, 99)
-    assert scenario5 is False
 
 
 if __name__ == "__main__":

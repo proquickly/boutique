@@ -23,6 +23,6 @@ for sentence in sentences:
     tokens = nltk.word_tokenize(sentence)
     print(sentence)
     print(tokens)
-    tagged = nltk.pos_tag(tokens)
+    tagged = nltk.pos_tag(tokens)/Users/andy/ws/boutique/src/boutique/application_patterns/demo_nlp.py
     print(tagged[0:6])
     input()
