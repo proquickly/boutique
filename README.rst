@@ -37,7 +37,34 @@ boutique
     Add a short description here!
 
 
-A longer description of your project goes here...
+This project layout was created with pyscaffold. Pyscaffold is not needed to run
+this project (but you can use it to create projects with this layout if you like).
+This project uses pyenv for manging python versions and virtual environments. The
+virtual environments automatically activate due to the .python_version file.
+Tis project uses tox for building. I install that with pipx (which is also how I
+install pyscaffold) so I can always have it at hand).
+
+You can do something like this (one off). Lots of really great tooling on linux and
+Mac:
+
+    pipx install pyscaffold
+    pipx install tox
+    brew install pyenv
+    brew install sphinx-doc
+    pyenv install 3.12.3 # or whatever os the bersion you want
+
+After cloning this repo be sure to run the following commands to get started:
+    pyenv virtualenv 3.12.3 boutique
+    pyenv local boutique
+    pip install -e .
+
+NOTE: add dependencies to setup,cfg at ```install_requires =``` and then run
+```pip install -e .``` to install them.
+
+If using pyright be sure to add this to pyproject.toml:
+[tool.pyright]
+venvPath = "/Users/andy/.pyenv/versions/"  # your directory
+venv = "boutique"                          # the venv name
 
 
 .. _pyscaffold-notes:
@@ -45,20 +72,8 @@ A longer description of your project goes here...
 Making Changes & Contributing
 =============================
 
-This project uses `pre-commit`_, please make sure to install it before making any
-changes::
-
-    pip install pre-commit
-    cd boutique
-    pre-commit install
-
-It is a good idea to update the hooks to the latest version::
-
-    pre-commit autoupdate
-
-Don't forget to tell your contributors to also install and use pre-commit.
-
-.. _pre-commit: https://pre-commit.com/
+This project uses and will be setup to use `pre-commit`_,
+if you run the `post-clone` script.
 
 Note
 ====

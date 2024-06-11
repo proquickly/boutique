@@ -1,0 +1,4 @@
+#!/bin/bash
+. ./install-virtenv
+. ./install-devtools
+git checkout -b develop

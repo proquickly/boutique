@@ -1,0 +1,3 @@
+#!/bin/bash
+pyenv virtualenv 3.12.3 boutique
+pyenv local boutique
