@@ -1,11 +1,3 @@
-
-"""
-    neo4j example
-"""
-
-# code intentionally omitted - see git for complete module
-
-
 with driver.session() as session:
 
     log.info('Adding a few Person nodes')

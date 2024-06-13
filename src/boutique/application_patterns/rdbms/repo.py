@@ -1,6 +1,6 @@
 import sqlite3
 
-DATA_PATH = "/home/andy/data/"
+DATA_PATH = "data/"
 
 
 def get_connection():

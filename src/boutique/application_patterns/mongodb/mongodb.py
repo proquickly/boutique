@@ -6,12 +6,11 @@ data/db
 data/logpython
 
 pip install pymongo
-
+works bestr in container - docker pull mongo
 """
 from pymongo import MongoClient
 
 class MongoDBConnection:
-    """MongoDB Connection"""
     def __init__(self, host='127.0.0.1', port=27017):
         """
         be sure to use the ip address not name for local windows
@@ -62,7 +61,6 @@ def main():
 
         print_mdb_collection(cd)
 
-        # another collection
         collector = db["collector"]
         collector_ip = [
             {"name": "Andy", "preference": "Rock"},
@@ -72,18 +70,16 @@ def main():
         result = collector.insert_many(collector_ip)
         print_mdb_collection(collector)
 
-        # related data
         for name in collector.find():
             print(f'List for {name["name"]}')
             query = {"name": name["name"]}
             for a_cd in cd.find(query):
                 print(f'{name["name"]} has collected {a_cd}')
 
-        # start afresh next time?
         yorn = input("Drop data?")
         if yorn.upper() == 'Y':
             cd.drop()
-        collector.drop()
+            collector.drop()
 
 
 if __name__ == "__main__":

@@ -1,9 +1,3 @@
-"""
-    demonstrate use of Redis
-"""
-
-# code intentionally omitted - see git for complete module
-
 try:
     log.info('Step 1: connect to Redis')
     r = src.login_database.login_redis_cloud()

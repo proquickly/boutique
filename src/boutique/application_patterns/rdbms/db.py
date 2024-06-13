@@ -1,7 +1,3 @@
-"""
-show simplest database operation
-"""
-
 import sqlite3
 
 sql_statements = (
@@ -15,15 +11,13 @@ sql_statements = (
 
 
 def main():
-    """ run the sql """
-    conn = sqlite3.connect("dbms.db")
-    c = conn.cursor()
-    [c.execute(statement) for statement in sql_statements]
-    conn.commit()
-    rows = c.fetchall()
-    print(rows)
-    c.close()
-    conn.close()
+    with sqlite3.connect("data/dbms.db") as conn:
+        c = conn.cursor()
+        [c.execute(statement) for statement in sql_statements]
+        conn.commit()
+        rows = c.fetchall()
+        print(rows)
+        c.close()
 
 
 if __name__ == "__main__":

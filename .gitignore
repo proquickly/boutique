@@ -53,3 +53,5 @@ MANIFEST
 .venv*/
 .conda*/
 venv/data/
+data/**
+data/

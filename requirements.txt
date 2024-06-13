@@ -1,5 +1,6 @@
 pytest-mock
 pre-commit
+pydantic
 tox
 sphinx
 pyscaffold
@@ -20,3 +21,7 @@ numpy
 matplotlib
 nltk
 pdfplumber
+flask
+flask-restful
+sqlalchemy
+pymongo
